@@ -2,13 +2,7 @@ import os
 import subprocess
 from colorama import Fore, Style, init
 import zipfile
-import paramiko
 import ftplib
-import rarfile
-import mysql.connector
-import requests
-import msoffcrypto
-import PyPDF2
 
 init(autoreset=True)
 
@@ -16,7 +10,7 @@ def limpiar_pantalla():
     os.system('cls' if os.name == 'nt' else 'clear')
 
 def mostrar_banner():
-    print(Fore.RED + Style.BRIGHT + """
+    print(Fore.RED + Style.BRIGHT + r"""
    .--.             █████████████████████████████████████████
   |o_o |            ███ G.A.BruteForce - Ético y Educativo ███
   |:_/ |            █████████████████████████████████████████
@@ -45,6 +39,11 @@ def fuerza_bruta_zip():
         print(f"❌ Error al abrir el archivo ZIP: {e}")
 
 def fuerza_bruta_ssh():
+    try:
+        import paramiko
+    except ImportError:
+        print("❌ Falta 'paramiko'. Instálalo con: python3 -m pip install paramiko")
+        return
     host = input("🔐 IP del servidor SSH: ")
     usuario = input("👤 Usuario: ")
     diccionario = input("📄 Diccionario: ")
@@ -80,6 +79,12 @@ def fuerza_bruta_ftp():
     print("[✘] No se encontró la contraseña.")
 
 def fuerza_bruta_rar():
+    try:
+        import rarfile
+    except ImportError:
+        print("❌ Falta 'rarfile'. Instálalo con: python3 -m pip install rarfile")
+        print("ℹ️ Además instala 'unrar' o 'unar' en el sistema (ej: sudo apt install unrar).")
+        return
     archivo = input("📁 Archivo RAR: ")
     diccionario = input("📄 Diccionario: ")
     rf = rarfile.RarFile(archivo)
@@ -95,6 +100,11 @@ def fuerza_bruta_rar():
     print("[✘] No se encontró la contraseña.")
 
 def fuerza_bruta_mysql():
+    try:
+        import mysql.connector
+    except ImportError:
+        print("❌ Falta 'mysql-connector-python'. Instálalo con: python3 -m pip install mysql-connector-python")
+        return
     host = input("🔐 IP MySQL: ")
     usuario = input("👤 Usuario: ")
     diccionario = input("📄 Diccionario: ")
@@ -110,6 +120,11 @@ def fuerza_bruta_mysql():
     print("[✘] No se encontró la contraseña.")
 
 def fuerza_bruta_http():
+    try:
+        import requests
+    except ImportError:
+        print("❌ Falta 'requests'. Instálalo con: python3 -m pip install requests")
+        return
     url = input("🌐 URL del login: ")
     usuario = input("👤 Usuario: ")
     diccionario = input("📄 Diccionario: ")
@@ -126,6 +141,11 @@ def fuerza_bruta_http():
     print("[✘] No se encontró la contraseña.")
 
 def fuerza_bruta_excel():
+    try:
+        import msoffcrypto
+    except ImportError:
+        print("❌ Falta 'msoffcrypto-tool'. Instálalo con: python3 -m pip install msoffcrypto-tool")
+        return
     archivo = input("📁 Archivo Excel: ")
     diccionario = input("📄 Diccionario: ")
     with open(diccionario, 'r') as f:
@@ -143,6 +163,11 @@ def fuerza_bruta_excel():
     print("[✘] No se encontró la contraseña.")
 
 def fuerza_bruta_pdf():
+    try:
+        import PyPDF2
+    except ImportError:
+        print("❌ Falta 'PyPDF2'. Instálalo con: python3 -m pip install PyPDF2")
+        return
     archivo = input("📁 Archivo PDF: ")
     diccionario = input("📄 Diccionario: ")
     with open(diccionario, 'r') as f:

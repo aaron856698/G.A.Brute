@@ -3,7 +3,6 @@ colorama>=0.4.4
 
 # Módulos de fuerza bruta
 paramiko>=2.7.2
-ftplib2>=0.3.1
 rarfile>=4.0
 mysql-connector-python>=8.0.33
 requests>=2.28.0

@@ -33,6 +33,27 @@ pip install msoffcrypto-tool
 # Para MySQL: pip install mysql-connector-python
 ```
 
+### Linux (Python 3)
+```bash
+# Usa siempre el intérprete correcto
+python3 -m pip install -r requirements.txt
+
+# Si solo falta una librería concreta
+python3 -m pip install rarfile paramiko requests PyPDF2 msoffcrypto-tool mysql-connector-python
+
+# Para manejar archivos RAR cifrados, instala además en el sistema:
+# Debian/Ubuntu
+sudo apt update && sudo apt install unrar
+# o alternativa
+sudo apt install unar
+
+# Fedora
+sudo dnf install unrar
+
+# Arch
+sudo pacman -S unrar
+```
+
 ### 3. Verificar instalación
 ```bash
 python script.py
