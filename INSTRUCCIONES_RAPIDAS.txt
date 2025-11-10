@@ -1,0 +1,67 @@
+# 🚀 INSTRUCCIONES RÁPIDAS - G.A.BruteForce
+
+## PASO 1: Instalar dependencias
+```bash
+pip install -r requirements.txt
+```
+
+## PASO 2: Crear archivos de prueba
+### Opción A: Usar contraseñas del diccionario
+Las contraseñas más comunes en `diccionario_basico.txt` son:
+- password
+- 123456
+- admin
+- root
+- test
+
+### Opción B: Crear archivos protegidos manualmente
+1. **ZIP protegido**: Click derecho → Agregar a archivo ZIP → Establecer contraseña
+2. **PDF protegido**: En tu editor PDF → Proteger con contraseña
+3. **Excel protegido**: Archivo → Información → Proteger libro → Cifrar con contraseña
+
+## PASO 3: Ejecutar el script
+```bash
+python script.py
+```
+
+## PRUEBAS RECOMENDADAS PARA EMPEZAR:
+
+### 🎯 PRUEBA 1: Fuerza bruta a ZIP
+1. Crea un ZIP con contraseña "password"
+2. Selecciona opción [3] en el menú
+3. Ruta del archivo: `C:\ruta\a\tu\archivo.zip`
+4. Diccionario: `diccionario_basico.txt`
+5. ¡Debería encontrar la contraseña!
+
+### 🎯 PRUEBA 2: Ver redes Wi-Fi guardadas
+1. Selecciona opción [17]
+2. Muestra contraseñas Wi-Fi guardadas en Windows
+
+### 🎯 PRUEBA 3: Escanear red local
+1. Selecciona opción [24]
+2. Rango de red: `192.168.1.0/24`
+3. Muestra dispositivos conectados
+
+### 🎯 PRUEBA 4: Ver procesos en Windows
+1. Selecciona opción [18]
+2. Muestra todos los procesos activos
+
+## 💡 CONSEJOS:
+- Usa contraseñas del diccionario para pruebas exitosas
+- Para servicios SSH/FTP/MySQL, necesitas servidores reales
+- Los módulos Android requieren ADB y depuración USB activada
+- Algunas funciones necesitan ejecutar como administrador
+
+## ⚠️ ERRORES COMUNES:
+- **"No module named..."** → Ejecuta `pip install -r requirements.txt`
+- **"Acceso denegado"** → Ejecuta como administrador
+- **"Archivo no encontrado"** → Verifica las rutas de los archivos
+- **"Conexión fallida"** → Verifica que el servicio esté activo
+
+## 📞 SOPORTE:
+Si algo no funciona:
+1. Verifica que Python esté instalado: `python --version`
+2. Instala dependencias manualmente: `pip install colorama paramiko requests`
+3. Lee el README.md completo para más detalles
+
+¡Listo para hackear éticamente! 🎓
